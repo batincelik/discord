@@ -3,26 +3,26 @@ const client = new Discord.Client();
 
 client.on('message', message => { 
 
-    function rasteleSembol(uzunluk, semboller) {
+    function randomsymbol(length, symbols) {
 
-var maske = '';
+var mask = '';
 
-if (semboller.indexOf('a') > -1) maske += 'abcdefghijklmnopqrstuvwxyz';
+if (symbols.indexOf('a') > -1) mask += 'abcdefghijklmnopqrstuvwxyz';
 
-if (semboller.indexOf('A') > -1) maske += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+if (symbols.indexOf('A') > -1) mask += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-if (semboller.indexOf('0') > -1) maske += '0123456789';
+if (symbols.indexOf('0') > -1) mask += '0123456789';
 
 
 var sonuc = '';
 
  
 
-for (var i = uzunluk; i > 0; --i) 
+for (var i = length; i > 0; --i) 
 
 {
 
-sonuc += maske[Math.floor(Math.random() * maske.length)];
+sonuc += mask[Math.floor(Math.random() * mask.length)];
 
 }
 
@@ -31,7 +31,7 @@ return sonuc;
 }
 
 function spamla(){
-    message.channel.send("https:/"+"/discord.gift/" + rasteleSembol(16,'0aA'));
+    message.channel.send("https:/"+"/discord.gift/" + randomsymbol(16,'0aA'));
 }
 
     if (message.channel.id = "Your private channel id."){
